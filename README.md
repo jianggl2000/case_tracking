@@ -1,8 +1,8 @@
-# case_tracking
+## case_tracking
 焦急等待中更关心自己申请前后其他人申请的进展，这个python工具用于追踪个人申请前后其它申请的进展。使用方法，
 > python3 case_tracking.py --help
 
-## 关键参数：
+### 关键参数：
 > --loc MSC --start 2191580000 --type I-485
 查询 MSC2191580000 前500个, 和后500个I-485申请，并将总结结果写到log.txt文件中。
 
