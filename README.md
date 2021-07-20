@@ -9,7 +9,7 @@
 
 > -v
 
-显示每个结果
+显示每个case结果
 
 ### 运行及结果
 > python3 case_tracking.py --loc MSC --start 2191580000 --type I-485 -n 100
