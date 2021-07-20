@@ -1,5 +1,6 @@
 ## case_tracking
-焦急等待中想参考自己申请前后其他人申请的进展，这个python工具用于追踪个人申请前后其它cases申请的进展。使用方法参考，
+焦急等待中想参考自己申请前后其它申请的进展？这个python工具可用于追踪个人申请前后其它cases的进展。
+使用方法参考，
 > python3 case_tracking.py --help
 
 ### 关键参数：
