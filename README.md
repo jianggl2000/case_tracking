@@ -1,5 +1,5 @@
 ## case_tracking
-焦急等待中更关心自己申请前后其他人申请的进展，这个python工具用于追踪个人申请前后其它申请的进展。使用方法，
+焦急等待中想参考自己申请前后其他人申请的进展，这个python工具用于追踪个人申请前后其它cases申请的进展。使用方法参考，
 > python3 case_tracking.py --help
 
 ### 关键参数：
@@ -23,5 +23,5 @@ optional arguments:
   -v                    print all status
   -verr                 print all error message
 ```
-#### 根据以下代码修改
+##### 根据以下代码修改
 https://github.com/cczhong11/check_uscis_script
