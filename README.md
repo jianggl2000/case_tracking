@@ -1,5 +1,5 @@
 ## case_tracking
-焦急等待中想参考自己申请前后其它申请的进展？这个python工具可用于追踪个人申请前后其它cases的进展。
+焦急等待中想参考自己申请前后其它申请的进展？这个python工具可用于追踪个人申请前后其它cases。
 使用方法参考，
 > python3 case_tracking.py --help
 
@@ -12,7 +12,7 @@
 
 显示每个case结果
 
-### 运行及结果
+### 运行及结果解释
 > python3 case_tracking.py --loc MSC --start 2191580000 --type I-485 -n 100
 ```
 Search 100 cases BEFORE MSC2191580000, from MSC2191579900 to MSC2191579999, for I-485
