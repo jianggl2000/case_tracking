@@ -4,10 +4,40 @@
 
 ### 关键参数：
 > --loc MSC --start 2191580000 --type I-485
-查询 MSC2191580000 前500个, 和后500个I-485申请，并将总结结果写到log.txt文件中。
+查询 MSC2191580000 前500个, 和后500个中I-485申请，并将总结结果写到log.txt文件中。
 
 > -v
 显示每个结果
+
+### 运行及结果
+> python3 case_tracking.py --loc MSC --start 2191580000 --type I-485 -n 100
+```
+Search 100 cases BEFORE MSC2191580000, from MSC2191579900 to MSC2191579999, for I-485
+                MSC2191579928: Fees Were Waived
+                MSC2191579940: Fees Were Waived
+Received: 19; Fingerprinted: 0; Transferred: 0; Rejected: 11; RFIE: 0; Others: 2; Total: 32/100
+```
+此处为MSC2191580000前200个case中I485进展，一共32个485申请，19个Received, 11个Rejected, 2个其它情况，显示在上方："Fees were Waived".
+```
+Search for 100 cases AFTER MSC2191580000, from MSC2191580000 to MSC2191580099, for I-485
+                MSC2191580009: Fees Were Waived
+                MSC2191580006: Fees Were Waived
+                MSC2191580012: Fees Were Waived
+                MSC2191580007: Fees Were Waived
+                MSC2191580010: Fees Were Waived
+                MSC2191580011: Fees Were Waived
+                MSC2191580049: Case Transferred To Another Office
+                MSC2191580052: Case Transferred To Another Office
+                MSC2191580046: Case Transferred To Another Office
+                MSC2191580055: Case Transferred To Another Office
+                MSC2191580073: Fees Were Waived
+                MSC2191580088: Fees Were Waived
+                MSC2191580074: Fees Were Waived
+                MSC2191580089: Fees Were Waived
+                MSC2191580093: Fees Were Waived
+Received: 19; Fingerprinted: 0; Transferred: 0; Rejected: 4; RFIE: 0; Others: 15; Total: 38/100
+```
+此处为MSC2191580000和其后200个case中I485进展
 
 其它参数，
 ```
