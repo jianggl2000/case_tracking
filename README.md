@@ -25,3 +25,4 @@ optional arguments:
 ```
 ##### 基于以下代码修改
 https://github.com/cczhong11/check_uscis_script
+安装请参考此网站
