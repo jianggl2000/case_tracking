@@ -23,5 +23,5 @@ optional arguments:
   -v                    print all status
   -verr                 print all error message
 ```
-##### 根据以下代码修改
+##### 基于以下代码修改
 https://github.com/cczhong11/check_uscis_script
