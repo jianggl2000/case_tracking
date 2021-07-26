@@ -139,7 +139,7 @@ if __name__ == "__main__":
     for i in range(client.opt["range"]):
         search_item = f"{client.opt['loc']}{client.opt['start']+i}"
         search_list.append(search_item)
-    print(f"from {search_list[0]} to {search_list[-1]}, for I485")
+    print(f"from {search_list[0]} to {search_list[-1]}, for {client.opt['type']}")
     if client.opt["seq"]:
         client.sequential(search_list)
     else:
