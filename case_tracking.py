@@ -10,7 +10,7 @@ import numpy
 import datetime
 
 def init_arg(parser):
-    parser.add_argument('--start',"--from", type=int, default=2191580000, help='Start id')
+    parser.add_argument('--start',"--my", type=int, default=2191580000, help='Start id')
     parser.add_argument('--range', "-n", type=int, default=500, help='Search range')
     parser.add_argument('--loc', type=str, default='MSC', help='Process location, default is MSC')
     parser.add_argument('--type', type=str, default='I-485', help='Petition type, default is I-485')
@@ -88,13 +88,13 @@ class USCIS(object):
         rec = numpy.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
         for v in rs:
             rec += v
-        print(f"\nReceived: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']}")
-        Log.write(f"Received: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']}")
+        print(f"\nReceived: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']} ")
+        Log.write(f"Received: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']} ")
         if sum(rec[7:])>0:
-            print(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]}")
+            print(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]} ")
             print(f"approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}\n")
-            Log.write(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]}")
-            Log.write(f"approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}")
+            Log.write(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]} ")
+            Log.write(f"approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}\n")
         else:
             print("\n")
             Log.write("\n")
@@ -105,12 +105,12 @@ class USCIS(object):
             rs = self.getstatus(i)
             rec += rs
         print(f"\nReceived: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']}")
-        Log.write(f"Received: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']}")
+        Log.write(f"Received: {rec[0]}; Fingerprinted: {rec[1]}; Transferred: {rec[2]}; Rejected: {rec[3]}; RFIE: {rec[4]}; Others: {rec[5]}; Total: {sum(rec)}/{client.opt['range']} ")
         if sum(rec[7:]) > 0:
             print(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]}")
             print(f"approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}\n")
-            Log.write(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]}")
-            Log.write(f"Approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}")
+            Log.write(f"Interview Ready: {rec[7]}; interview Scheduled: {rec[8]}; interview Completed: {rec[9]}; Interview Canceled: {rec[10]} ")
+            Log.write(f"Approved: {rec[11]}; denied: {rec[12]}; terminated: {rec[13]}; Delivered: {rec[14]}\n")
         else:
             print("\n")
             Log.write("\n")
@@ -119,8 +119,8 @@ if __name__ == "__main__":
     args = argparse.ArgumentParser()
     client = USCIS(args)
     
-    CurTime = "\t\t#################### "+ datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")+ " # "+ client.opt['type'] +" # "+ client.opt['loc'] +" ####################\n"
-    Log = open("log.txt","a")
+    CurTime = "\t\t#################### "+ datetime.datetime.now().strftime("%m-%d-%Y %H:%M:%S")+ " # "+ client.opt['type'] +" # "+ client.opt['loc'] + str(client.opt['start']) +" ####################\n"
+    Log = open("log."+ client.opt['type'] +".txt","a")
     Log.write(CurTime)
     
     print(f"Search {client.opt['range']} cases BEFORE {client.opt['loc']}{client.opt['start']}, ", end='')
