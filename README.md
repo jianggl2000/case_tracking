@@ -4,7 +4,7 @@
 > python3 case_tracking.py --help
 
 ### 关键参数：
-> --loc MSC --start 2191580000 --type I-485
+> --loc MSC --my 2191580000 --type I-485
 
 查询 MSC2191580000 前500个, 和后500个中I-485申请，并将结果总结写到log.txt文件中。
 
@@ -13,7 +13,7 @@
 显示每个case结果
 
 ### 运行及结果解释
-> python3 case_tracking.py --loc MSC --start 2191580000 --type I-485 -n 100
+> python3 case_tracking.py --loc MSC --my 2191580000 --type I-485 -n 100
 ```
 Search 100 cases BEFORE MSC2191580000, from MSC2191579900 to MSC2191579999, for I-485
                 MSC2191579928: Fees Were Waived
