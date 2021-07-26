@@ -46,7 +46,7 @@ Received: 19; Fingerprinted: 0; Transferred: 0; Rejected: 4; RFIE: 0; Others: 15
 ```
 optional arguments:
   -h, --help            show this help message and exit
-  --start START, --from START
+  --start START, --my START
                         Start id
   --range RANGE, -n RANGE
                         Search range
